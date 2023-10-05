@@ -31,7 +31,7 @@ function Slidershow() {
     //   },
     // ];
     return (
-        <section className="myslider">
+        <section className="myslider" >
             <div
                 id="carouselExampleCaptions"
                 class="carousel slide"
@@ -76,7 +76,7 @@ function Slidershow() {
                         if (index === 0) {
                             return (
                                 <div class="carousel-item active" key={index}>
-                                    <img src={urlImage + "slider/" + slider.image} class="d-block w-100" alt={slider.image} />
+                                    <img  src={urlImage + "slider/" + slider.image} class="d-block w-100" alt={slider.image} />
                                     <div class="carousel-caption d-none d-md-block">
                                         
                                     </div>

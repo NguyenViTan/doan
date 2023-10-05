@@ -7,16 +7,24 @@ import ProductBrand from "../pages/frontend/ProductBrand";
 import ProductCategory from "../pages/frontend/ProductCategory";
 import GioiThieu from "../layouts/LayoutSite/gioithieu";
 import Post from "../components/frontend/postitem";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 const RouterPublic = [
     { path: "/", component: Home },
     { path: "/san-pham", component: Product },
+    { path: "/login", component: Login },
+    { path: "/register", component: Register },
+
+
     { path: "/gioi-thieu", component: GioiThieu },
+    
 
     { path: "/danh-muc-san-pham/:slug", component: ProductCategory },
     { path: "/thuong-hieu/:slug", component: ProductBrand },
     { path: "/chi-tiet-san-pham/:slug", component: ProductDetail },
     { path: "/lien-he", component: Contact },
     { path: "/bai-viet/:slug", component: Post },
+    
 
 
 ];

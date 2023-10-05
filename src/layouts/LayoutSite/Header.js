@@ -1,16 +1,16 @@
 import React from "react";
-import Logo from '../../assets/images/logo.webp';
+import Logo from '../../assets/images/th.jpg';
 import { Link } from "react-router-dom";
 
 
 // import { FaPhoneAlt, FaShoppingCart, FaRegistered, FaSignInAlt } from "react-icons/fa";
 function Header() {
-    return (<section class="myheader ">
-        <div class="container my-3">
+    return (<section class="myheader  ">
+        <div class="container ">
             <div class="row">
                 <div class="col-md-3 ">
-                    <Link>
-                        <img src={Logo} className="img-fluid" alt="logo" />
+                    <Link to="/admin">
+                        <img src={Logo} className="img-fluid py-2 " alt="logo"  width="200px"/>
                     </Link>
                 </div>
 
@@ -37,7 +37,7 @@ function Header() {
                             <div class="row">
                                 <div class="col-3"><i class="bi bi-telephone"></i></div>
                                 <div class="col-9">
-                                    Xin chào <br></br>
+                                    Xin chào <br/>
                                     <strong class="text-danger">Đăng nhập</strong>
                                 </div>
 

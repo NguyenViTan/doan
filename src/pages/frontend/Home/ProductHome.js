@@ -15,7 +15,7 @@ function ProductHome(props) {
     }, []);
     return (<div className="container my-3">
         <div className="product-category">
-            <marquee>Chào mừng quý khách đến với cửa hàng xe máy chính hãng HALUAUTO </marquee>
+           
             <h3 className="text-center text-danger">{props.category.name} </h3>
 
             <div className="row my-3">

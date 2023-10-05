@@ -28,13 +28,16 @@ function ProductDetail() {
                         <img src={urlImage + "product/" + product.image} alt="hinh" className="img-fluid w-100" />
 
                     </div>
-                    <div className="col-md-6"><h1>{product.name}</h1>
-                        <h1>{product.price}</h1>
+                    <div className="  col-md-6"><h4>{product.name}</h4>
+                        <h4 className="text-danger">Giá: {product.price}</h4>
+                        <div className="col-md-12 text-dark"> {product.detail}</div>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-12"> {product.detail}</div>
-                    <h3>Sản phẩm cùng loại</h3>
+                    
+                    <hr/>
+                 
+                    <h3 className="text-danger py-3">Mèo Anh Cùng Loại</h3>
                 </div>
                 <div className="row">
                     {product_other.map(function (product, index) {
@@ -43,6 +46,43 @@ function ProductDetail() {
 
                 </div>
             </div>
+            <header class="section-heading heading-line   text-center">
+			<h4 class="title-section text-danger text-center"> Giấy Tờ Đi Kèm</h4>
+		</header>
+
+		<div class="row row-sm ">
+		<div class=" col-lg-3 col-md-4 col-6">
+			<div class="  card-product-grid">
+				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto1.jpg"/> </a>
+				
+			</div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-6">
+			<div class="  card-product-grid">
+				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto2.jpg"/> </a>
+				
+			</div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-6">
+			<div class="  card-product-grid">
+				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto3.jpg"/> </a>
+				
+			</div>
+		</div>
+		<div class="col-xl-2  col-md-4 col-6">
+			<div class=" card-product-grid">
+				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto4.jpg"/> </a>
+				
+			</div>
+		</div>
+
+
+
+
+
+
+</div>
+
         </section>
     );
 }

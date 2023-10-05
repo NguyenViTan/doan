@@ -10,6 +10,7 @@ import Post from './Post';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import PostAdd from './PostAdd';
 
 
 
@@ -19,6 +20,7 @@ function LayoutSite() {
             <Header />
             <Menu />
             <Outlet />
+            <PostAdd/>2
             <Post/>
             <Footer />
         </>
