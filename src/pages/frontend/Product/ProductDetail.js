@@ -4,6 +4,13 @@ import productservice from "../../../services/ProductService";
 import { useParams } from "react-router-dom";
 import { urlImage } from "../../../config";
 import ProductItem from "../../../components/frontend/productitem";
+// import a1 from "../../assets/images/giayto1.jpg";
+// import a2 from "../../assets/images/giayto3.jpg";
+// import a3 from "../../assets/images/giayto2.jpg";
+// import a4 from "../../assets/images/giayto4.jpg";
+
+
+
 function ProductDetail() {
     const [product, setProduct] = useState([]);
     const [product_other, setProducOther] = useState([]);
@@ -46,32 +53,32 @@ function ProductDetail() {
 
                 </div>
             </div>
-            <header class="section-heading heading-line   text-center">
+            {/* <header class="section-heading heading-line   text-center">
 			<h4 class="title-section text-danger text-center"> Giấy Tờ Đi Kèm</h4>
 		</header>
 
 		<div class="row row-sm ">
 		<div class=" col-lg-3 col-md-4 col-6">
 			<div class="  card-product-grid">
-				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto1.jpg"/> </a>
+				<a href="/detail" class="img-wrap" > <img src={a1}/> </a>
 				
 			</div>
 		</div>
 		<div class=" col-lg-3 col-md-4 col-6">
 			<div class="  card-product-grid">
-				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto2.jpg"/> </a>
+				<a href="/detail" class="img-wrap" > <img src={a2}/> </a>
 				
 			</div>
 		</div>
 		<div class=" col-lg-3 col-md-4 col-6">
 			<div class="  card-product-grid">
-				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto3.jpg"/> </a>
+				<a href="/detail" class="img-wrap" > <img src={a4}/> </a>
 				
 			</div>
 		</div>
 		<div class="col-xl-2  col-md-4 col-6">
 			<div class=" card-product-grid">
-				<a href="/detail" class="img-wrap" > <img src="../assets/images/giayto4.jpg"/> </a>
+				<a href="/detail" class="img-wrap" > <img src={a3}/> </a>
 				
 			</div>
 		</div>
@@ -81,7 +88,7 @@ function ProductDetail() {
 
 
 
-</div>
+</div> */}
 
         </section>
     );

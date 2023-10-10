@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import Slider from "./Slider"
 import categoryservice from "../../../services/CategoryService";
 import ProductHome from "./ProductHome";
+import Post from "../../frontend/Post"
+
+
 
 function Home() {
     const [categorys, setCategorys] = useState([]);
@@ -20,6 +23,7 @@ function Home() {
         {categorys.map(function (category, index) {
             return <ProductHome key={index} category={category} />
         })}
+ <Post/>
     </section >
     )
 };

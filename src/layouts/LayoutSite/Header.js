@@ -9,7 +9,7 @@ function Header() {
         <div class="container ">
             <div class="row">
                 <div class="col-md-3 ">
-                    <Link to="/admin">
+                    <Link to="/">
                         <img src={Logo} className="img-fluid py-2 " alt="logo"  width="200px"/>
                     </Link>
                 </div>

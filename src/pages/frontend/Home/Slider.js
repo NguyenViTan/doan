@@ -77,9 +77,7 @@ function Slidershow() {
                             return (
                                 <div class="carousel-item active" key={index}>
                                     <img  src={urlImage + "slider/" + slider.image} class="d-block w-100" alt={slider.image} />
-                                    <div class="carousel-caption d-none d-md-block">
-                                        
-                                    </div>
+                                    
                                 </div>
                             );
                         } else {
