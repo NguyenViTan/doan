@@ -26,8 +26,9 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name; //form
         $user->email = $request->email; //form
-        $user->phone = $request->phone; //form
         $user->username = $request->username; //form
+        $user->phone = $request->phone; //form
+       
         $user->password = $request->password; //form
         $user->address = $request->address; //form
         // $user->image = $request->name;

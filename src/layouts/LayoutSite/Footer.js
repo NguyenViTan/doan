@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 class Footer extends Component {
 
 	render() {
@@ -21,22 +22,23 @@ class Footer extends Component {
 								<h6 class="title">PETSMART </h6>
 								<hr></hr>
 								<ul class="list-unstyled">
-									<li> Giới thiệu công ty</li>
+								<li> <a href="/thongtin "class="text-white">Gioi thiệu</a></li>
 									<li> Liên hệ nghề nghiệp</li>
 									<li> Hợp tác nhân giống</li>
 									<li> Cửa hàng phụ kiện</li>
-									<li> Truyền thông</li>
+									
 								</ul>
 							</aside>
 							<aside class="col-md col-6">
-								<h6 class="title">Chính sách mua hàng</h6>
+							<h6> Truyền thông</h6>
 								<hr></hr>
 								<ul class="list-unstyled">
+								    <li> <a href="/chinhsach "class="text-white">Chính sách mua hàng</a></li>
 									<li> Mua trả góp </li>
 									<li> Bảo hành đổi trả</li>
 									<li>Giao nhận thanh toán</li>
 									<li> Chính sách bảo mật</li>
-									<li> Điều khoản dịch vụ</li>
+									<li> <a href="/tatcabaiviet "class="text-white">Tất cả bài viết</a></li>
 								</ul>
 							</aside>
 							<aside class="col-md col-6">

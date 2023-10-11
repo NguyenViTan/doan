@@ -19,13 +19,16 @@ function ProductItem(props) {
                         <div className="col-6">
                             <strong className="text-danger ">Giá:{accounting.formatNumber(props.product.price, 0, ".", ",")}<sup >đ</sup></strong>
                             <br/>
+                            {/* <del className="text-danger ">{accounting.formatNumber(props.product.price_sale, 0, ".", ",")} */}
+                           {/* </del><sup className="text-danger">đ</sup> */}
                             <div>
-                      
+                            <button className="  bg-danger text-white fs-5" style={{width:100,height:40}}> Mua </button>
                            </div>
+                           
                         </div>
                         <div className="col-6 text-end">
-                        <del className="text-danger ">{accounting.formatNumber(props.product.price_sale, 0, ".", ",")}
-                           </del><sup className="text-danger">đ</sup>
+                       
+                        
                         </div>
                         
                     </div>

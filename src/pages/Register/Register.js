@@ -1,8 +1,6 @@
 import React from "react";
 const Register =()=>(
     <section class="section-content padding-y">
-
-
 	<div class="card mx-auto" style={{maxWidth:'520px', marginTop:'40px'}}>
       <article class="card-body">
 		<header class="mb-4"><h4 class="card-title text-center">Đăng ký</h4></header>

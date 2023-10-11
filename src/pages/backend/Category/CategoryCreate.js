@@ -50,81 +50,83 @@ function CategoryCreate() {
     }
 
     return (
-        <form onSubmit={categoryStore}>
-            <div className="card">
-                <div className="card-header">
-                    <div className="row">
-                        <div className="col-md-6">
-                            <strong className="text-danger">
-                                Thêm danh mục
-                            </strong>
-                        </div>
-                        <div className="col-md-6 text-end">
-                            <button type="submit" className="btn btn-sm btn-success me-2">
-                                Lưu
-                            </button>
-                            <Link to="/admin/category" className="btn btn-sm btn-info">Quay lại</Link>
-                        </div>
+    
+        <form onSubmit={categoryStore} method="post">
+        <div className="card">
+            <div className="card-header">
+                <div className="row">
+                    <div className="col-md-6">
+                        <strong className="text-danger">
+                            THÊM DANH MỤC
+                        </strong>
+                    </div>
+                    <div className="col-md-6 text-end">
+                        <button type="submit" className=" btn btn-sm btn-success me-2">
+                            Lưu
+                        </button>
+                        <Link to="/admin/category" className="btn btn-sm btn-info">Về Danh Sách</Link>
                     </div>
                 </div>
-                <div className="card-body">
-                    <div className="row">
-                        <div className="col-md-9">
-                            <div className="md-3">
-                                <label htmlFor="name">Tên danh mục</label>
-                                <input onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} className="form-control" />
-                            </div>
-
-                            <div className="md-3">
-                                <label htmlFor="metakey">Từ khóa</label>
-                                <textarea onChange={(e) => setMetakey(e.target.value)} name="metakey" value={metakey} className="form-control"></textarea>
-                            </div>
-
-                            <div className="md-3">
-                                <label htmlFor="metadesc">Mô tả</label>
-                                <textarea onChange={(e) => setMetadesc(e.target.value)} name="metadesc" value={metadesc} className="form-control"></textarea>
-                            </div>
+            </div>
+            <div className="card-body">
+                <div className="row">
+                    <div className="col-md-9">
+                        <div className="mb-3">
+                            <label htmlFor="name">Tên Danh Mục</label>
+                            <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} className="form-control" />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="name">Từ Khóa</label>
+                            <textarea type="text" name="name" value={metakey} onChange={(e) => setMetakey(e.target.value)} className="form-control"></textarea>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="name">Mô Tả</label>
+                            <textarea type="text" name="name" value={metadesc} onChange={(e) => setMetadesc(e.target.value)} className="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div className="col-md-3">
+                        <div className="mb-3">
+                            <label htmlFor="parent_id">Danh Mục Cha</label>
+                           
+                            <select onChange={(e) => setParentId(e.target.value)} value={parent_id} name="parent_id" className="form-control">
+                                     <option value="0">Danh mục cha</option>
+                                     {categorys.map(function (cat, index) {
+                                         return (<option key={index} value={cat.id}>{cat.name}</option>
+                                        );
+                                    })}
+                              </select>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="sort_order">Sắp Xếpl</label>
+                            <select name="sort_order" value={sort_order} className="form-control" onChange={(e) => setSortOrder(e.target.value)}>
+                                <option value="0">None</option>
+                                {categorys.map(function (cat, index) {
+                                    return (
+                                        <option key={index} value={cat.sort_order + 1}>{cat.name}</option>
+                                    )
+                                })}
+                            </select>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="image">Hình Đại Diện</label>
+                            <input type="file" id="image" className="form-control" />
+                         
 
                         </div>
-                        <div className="col-md-3">
-                            <div className="md-3">
-                                <label htmlFor="parent_id">Danh mục cha</label>
-                                <select onChange={(e) => setParentId(e.target.value)} value={parent_id} name="parent_id" className="form-control">
-                                    <option value="0">Danh mục cha</option>
-                                    {categorys.map(function (cat, index) {
-                                        return (<option key={index} value={cat.id}>{cat.name}</option>
-                                        );
-                                    })}
-                                </select>
-                            </div>
-                            <div className="md-3">
-                                <label htmlFor="sort-order">Sắp xếp</label>
-                                <select onChange={(e) => setSortOrder(e.target.value)} value={sort_order} name="sort-order" className="form-control">
-                                    <option value="0">None</option>
-                                    {categorys.map(function (cat, index) {
-                                        return (
-                                            <option key={index} value={cat.sort_order + 1}>sau:{cat.name}</option>
-                                        );
-                                    })}
-                                </select>
-                            </div>
-                            <div className="md-3">
-                                <label htmlFor="image">Hình đại diện</label>
-                                <input type="file" id="image" className="form-control" />
-                            </div>
-                            <div className="md-3">
-                                <label htmlFor="status">Trạng thái</label>
-                                <select name="status" value={status} onChange={(e) => setStatus(e.target.value)} className="form-control">
-                                    <option value="1">Xuất bản</option>
-                                    <option value="2">Chưa xuất bản</option>
-                                </select>
-                            </div>
+                        <div className="mb-3">
+                            <label htmlFor="sort">Trạng Thái</label>
+                            <select name="sort" value={status} className="form-control" onChange={(e) => setStatus(e.target.value)}>
+                                <option value="1">Xuất Bản</option>
+                                <option value="2">Chưa Xuất Bản</option>
+
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </form>
+        </div>
+    </form>
+        
     );
 }
 
