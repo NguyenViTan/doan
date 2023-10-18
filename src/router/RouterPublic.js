@@ -12,6 +12,7 @@ import Register from "../pages/Register/Register";
 import Intro from "../pages/frontend/Introduct";
 import Pocily from "../pages/frontend/Policy";
 import AllPost from "../pages/frontend/AllPost";
+import Cart from "../pages/frontend/Cart/Cart";
 const RouterPublic = [
     { path: "/", component: Home },
     { path: "/san-pham", component: Product },
@@ -20,6 +21,8 @@ const RouterPublic = [
     { path: "/thongtin", component: Intro },
     { path: "/chinhsach", component: Pocily },
     { path: "/tatcabaiviet", component: AllPost },
+    { path: "/cart", component: Cart },
+
 
 
 

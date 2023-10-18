@@ -3,7 +3,6 @@ import Logo from '../../assets/images/th.jpg';
 import { Link } from "react-router-dom";
 
 
-// import { FaPhoneAlt, FaShoppingCart, FaRegistered, FaSignInAlt } from "react-icons/fa";
 function Header() {
     return (<section class="myheader  ">
         <div class="container ">
@@ -38,7 +37,7 @@ function Header() {
                                 <div class="col-3"><i class="bi bi-telephone"></i></div>
                                 <div class="col-9">
                                     Xin chào <br/>
-                                    <strong class="text-danger">Đăng nhập</strong>
+                                    <Link to='/login' class="text-danger">Đăng nhập</Link>
                                 </div>
 
                             </div>

@@ -55,6 +55,7 @@ Route::get('post_topic/{topic_id}/{limit}/{page?}', [PostController::class, 'pos
 Route::get('post_detail/{id}', [PostController::class, 'post_detail']);
 
 Route::get('post_other/{id}/{limit}', [PostController::class, 'post_other']);
+Route::get('post_home/{limit}/{topic_id?}', [PostController::class, 'post_home']);
 
 Route::get('menu_list/{position}/{parent_id?}', [MenuController::class, 'menu_list']);
 
@@ -162,11 +163,28 @@ Route::prefix('topic')->group(function(){
     Route::post('store',[TopicController::class,'store']);
     Route::post('update/{id}',[TopicController::class,'update']);
     Route::delete('destroy/{id}', [TopicController::class, 'destroy']);
+Route::get('topic_list/{parent_id?}', [TopicController::class, 'topic_list']);
+
 });
+// Route::prefix('user')->group(function(){
+//     Route::get('index',[UserController::class,'index']);
+//     Route::get('show/{id}',[UserController::class,'show']);
+//     Route::post('store',[UserController::class,'store']);
+//     Route::post('update/{id}',[UserController::class,'update']);
+//     Route::delete('destroy/{id}', [UserController::class, 'destroy']);
+    
+//     Route::post('adduser', [UserController::class, 'AddUser']);
+//     Route::post('login', [UserController::class, 'Login']);
+// });
 Route::prefix('user')->group(function(){
     Route::get('index',[UserController::class,'index']);
     Route::get('show/{id}',[UserController::class,'show']);
     Route::post('store',[UserController::class,'store']);
     Route::post('update/{id}',[UserController::class,'update']);
     Route::delete('destroy/{id}', [UserController::class, 'destroy']);
-});?>
+
+    Route::post('adduser', [UserController::class, 'AddUser']);
+    Route::post('login', [UserController::class, 'Login']);
+
+});
+?>

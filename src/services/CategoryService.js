@@ -30,7 +30,7 @@ function getCategoryByParentId(parent_id) {
 const categoryservice = {
     getCategoryByParentId: getCategoryByParentId,
     getAll: getAll,
-    getBySlug,
+    getBySlug:getBySlug,
     getById: getById,
     create: create,
     update: update,

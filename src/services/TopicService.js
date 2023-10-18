@@ -19,8 +19,12 @@ function remove(id) {
     return httpAxios.delete('topic/destroy/' + id);
 
 }
+function getTopicByParentId(parent_id) {
+    return httpAxios.get(`topic_list/${parent_id}`);
+}
 
 const topicservice = {
+    getTopicByParentId: getTopicByParentId,
     getAll: getAll,
     getById: getById,
     create: create,

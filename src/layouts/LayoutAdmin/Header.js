@@ -26,6 +26,8 @@ function Header() {
                                     <li><Link className="dropdown-item" to="/admin/slider">Slider</Link></li>
                                     <li><Link className="dropdown-item" to="/admin/topic">Topic</Link></li>
                                     <li><Link className="dropdown-item" to="/admin/user">Người dùng</Link></li>
+                                    <li><Link className="dropdown-item" to="/admin/config">Gioi thieu</Link></li>
+
 
 
                                 </ul>

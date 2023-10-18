@@ -31,8 +31,8 @@ class UserController extends Controller
        
         $user->password = $request->password; //form
         $user->address = $request->address; //form
-        // $user->image = $request->name;
-         //upload hình ảnh
+        $user->image = $request->name;
+      
          $files=$request->image;
          if ($files != null) {
              $extension = $files->getClientOriginalExtension();
@@ -42,7 +42,7 @@ class UserController extends Controller
                  $files->move(public_path('images/user'), $filename);
              }
          }
-         //
+         
         $user->roles = $request->roles;
         $user->created_at = date('Y-m-d H:i:s');
         //$user->status = $request->status; //form
@@ -93,4 +93,18 @@ class UserController extends Controller
             ['success' => true, 'message' => 'Xóa thành công', 'id' => $user], 200
         );
     }
-}
+    public function Login(Request $request){
+        $arg = [
+            ['email','=',$request->email],
+            ['password','=',$request->password],
+            ['status','=',1]
+        ];
+        $user = User::where($arg) -> get();
+        if(count($user) > 0){
+            return response()->json(['success' => true,'message'=>'Đăng nhập thành công', 'data' => $user],200);
+        }
+        else{
+            return response()->json(['success' => false,'message'=>'Đăng nhập thất bại', 'data' => null],404);
+        }
+    }
+} 

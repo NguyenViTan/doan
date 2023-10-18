@@ -19,12 +19,21 @@ function remove(id) {
     return httpAxios.delete('user/destroy/' + id);
 
 }
+function AddUser(user){
+    return httpAxios.post('user/adduser',user);
+}
+
+function Login(user){
+    return httpAxios.post('user/login',user);
+}
 
 const userservice = {
     getAll: getAll,
     getById: getById,
     create: create,
     update: update,
-    remove: remove
+    remove: remove,
+    AddUser:AddUser,
+    Login:Login
 }
 export default userservice;

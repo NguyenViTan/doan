@@ -16,6 +16,10 @@ import ProductUpdate from '../pages/backend/Product/ProductUpdate';
 import ProductShow from '../pages/backend/Product/ProductShow';
 import ProductList from '../pages/backend/Product/ProductList';
 
+// import ConfigCreate from '../pages/backend/Config/ConfigCreate';
+// import ConfigUpdate from '../pages/backend/Config/ConfigUpdate';
+// import ConfigShow from '../pages/backend/Config/ConfigShow';
+// import BrandsList from '../pages/backend/Config/ BrandsList';
 
 import SliderList from '../pages/backend/Slider/SliderList';
 import SliderUpdate from '../pages/backend/Slider/SliderUpdate';
@@ -113,6 +117,12 @@ const RouterPrivate = [
     { path: '/admin/contact/create', component: ContactCreate },
     { path: '/admin/contact/update/:id', component: ContactUpdate },
     { path: '/admin/contact/show/:id', component: ContactShow },
+
+    // { path: '/admin/config/create', component: ConfigCreate },
+    // { path: '/admin/config/show/:id', component: ConfigShow },
+    // { path: '/admin/config/update/:id', component: ConfigUpdate},
+    // { path: '/admin/config', component: BrandsList },
+
 
 
 

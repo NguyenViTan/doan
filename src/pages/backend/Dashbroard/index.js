@@ -1,4 +1,4 @@
 function Dashbroard() {
-    return (<h1>Dashbroard</h1>)
+    return (<h1></h1>)
 }
 export default Dashbroard;

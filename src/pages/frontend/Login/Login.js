@@ -1,78 +1,128 @@
-import { useEffect, useState} from "react";
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+// import { useEffect, useState} from "react";
+// import { FaFacebookF, FaTwitter } from "react-icons/fa";
+// import { Link, useNavigate } from "react-router-dom";
 
+// function Login() {
+//    const [email,setEmail]=useState("");
+//    const [password,setPassword]=useState("");
+//    const navigate = useNavigate();
+ 
+// async function login(){
+//     console.warn(email,password)
+//     let item=(email,password);
+//     let result=await fetch("http://localhost/vitannguyen/public/api/user/store",{
+//         method:'POST',
+//         headers:{
+//             "Content-Type":"application/json",
+//             "Accept":"application/json"
+//         },
+//         body:JSON.stringify(item)
+//     });
+//     result=await result.json();
+//     localStorage.setItem("user-info",JSON.stringify(result))
+//     navigate('/', { replace: true })
+// }
+//     return (
+//         <section class="section-conten padding-y" style={{minHeight:84}}>
+
+
+//         <div class="card mx-auto" style={{maxWidth: 380, marginTop:100}}>
+//           <div class="card-body">
+//           <h4 class="card-title mb-4">Đăng nhập</h4>
+//           <form onSubmit={login}>
+//                 <a href="#" class="btn text-white bg-secondary btn-block mb-2"> <i class="fab fa-facebook-f"></i>  Đăng ký bằng facebook</a>
+//                 <a href="#" class="btn btn-google btn-block mb-4 text-white bg-danger"> <i class="fab fa-google"></i>   Đăng nhập với google </a>
+//               <div class="form-group">
+//                  <input name="" class="form-control" placeholder="Username" type="text"/>
+//               </div> 
+//               <div class="form-group">
+//                 <input name="" class="form-control my-3" placeholder="Password" type="password"/>
+//               </div> 
+              
+//               <div class="form-group">
+//                   <a href="#" class="float-right">Forgot password?</a> 
+//                 <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""/> <div class="custom-control-label"> Remember </div> </label>
+//               </div> 
+//               <div class="form-group">
+//                   <button type="submit" class="btn btn-primary btn-block my-3"> Đăng nhập  </button>
+//               </div>    
+//           </form>
+//           </div> 
+//         </div>
+    
+//          <p class="text-center mt-4">Chưa có tài khoản? <a  className="text-danger"href="/register">Đăng ký</a></p>
+//          <br/><br/>
+    
+    
+    
+//     </section>
+//     );
+// }
+// export default Login;
+
+import { Link, useNavigate } from "react-router-dom";
+import "../Login/style.css";
+import { useState } from "react";
+import userservices from "../../../services/UserService";
 function Login() {
-   const [email,setEmail]=useState("");
-   const [password,setPassword]=useState("");
-   const navigate = useNavigate();
-    // useEffect(()=>{
-    //     if(localStorage.getItem('user-info')){
-    //         navigate('/', { replace: true })
-    //     }
-    // },[])
-async function login(){
-    console.warn(email,password)
-    let item=(email,password);
-    let result=await fetch("http://localhost/vitannguyen/public/api/user/store",{
-        method:'POST',
-        headers:{
-            "Content-Type":"application/json",
-            "Accept":"application/json"
-        },
-        body:JSON.stringify(item)
-    });
-    result=await result.json();
-    localStorage.setItem("user-info",JSON.stringify(result))
-    navigate('/', { replace: true })
-}
+    const navigate = useNavigate();
+
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+
+    async function Login(event) {
+        event.preventDefault();
+        const user = new FormData();
+        user.append("email", email);
+        user.append("password", password);
+
+        await userservices.Login(user).then(function (result) {
+            if (result.data.success === true) {
+                alert(result.data.message);
+                navigate('/', { replace: true });
+            }
+            else {
+                alert(result.data.message);
+                navigate('/pages/login', { replace: true });
+            }
+
+        })
+    }
     return (
-        <div>
-            <section className="vh-100">
-                <div className="container my-5">
-                    <div className="row d-flex align-items-center justify-content-center h-100">
-                        {/* <div className="col-md-8 col-lg-7 col-xl-6">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                                className="img-fluid" alt="Phone image" />
-                        </div> */}
-                        <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                            <form>
-                                <div className="form-outline mb-4">
-                                    <input type="email" 
-                                    onChange={(e)=>setEmail}
-                                    id="form1Example13" className="form-control form-control-lg" placeholder="Email address" />
-                                </div>
-                                <div className="form-outline mb-4">
-                                    <input type="password"
-                                     onChange={(e)=>setPassword}
-                                     id="form1Example23" className="form-control form-control-lg" placeholder="Password" />
-                                </div>
-                                <div className="d-flex justify-content-around align-items-center mb-4">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" value="" id="form1Example3" />
-                                        <label className="form-check-label" for="form1Example3"> Remember me </label>
-                                    </div>
-                                    <Link to="#!" style={{ textDecorationLine: "none" }}>Forgot password?</Link>
-                                </div>
-                                <button type="submit" onClick={login} className="btn btn-primary btn-lg btn-block" style={{ width: 525 }}>Sign in</button>
-                                <p className="py-2 text-center "  style={{color: "#393f81"}}>Don't have an account? <Link className="text-danger"to="/dang-ky"
-                                    style={{color: "#393f81",textDecorationLine:"none"}}>Register here</Link></p>
-                                <div className="divider d-flex align-items-center my-3 ">
-                                    <p className="text-center fw-bold mx-3 mb-0 text-muted " style={{ paddingLeft: 235 }}>OR</p>
-                                </div>
-                                <Link className="btn btn-primary btn-lg btn-block " style={{ backgroundColor: "#3b5998", width: 525 }} to="#!"
-                                    role="button">
-                                    <i className="text-center me-2" ></i><FaFacebookF /> Continue with Facebook
-                                </Link>
-                                <Link className="btn btn-primary btn-lg btn-block my-2" style={{ backgroundColor: "#55acee", width: 525 }} to="#!"
-                                    role="button">
-                                    <i className="text-center me-2 "></i><FaTwitter /> Continue with Twitter</Link>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <section class="section-conten padding-y" style={{minHeight:84}}>
+
+
+        <div class="card mx-auto" style={{maxWidth: 380, marginTop:100}}>
+          <div class="card-body">
+          <h4 class="card-title mb-4">Đăng nhập</h4>
+          <form class="form"  method="" action="" onSubmit={Login}>
+                <a href="#" class="btn text-white bg-secondary btn-block mb-2"> <i class="fab fa-facebook-f"></i>  Đăng ký bằng facebook</a>
+                <a href="#" class="btn btn-google btn-block mb-4 text-white bg-danger"> <i class="fab fa-google"></i>   Đăng nhập với google </a>
+              <div class="form-group">
+                 <input name="" class="form-control" placeholder="Username" type="text"/>
+              </div> 
+              <div class="form-group">
+                <input name="" class="form-control my-3" placeholder="Password" type="password"/>
+              </div> 
+              
+              {/* <div class="form-group">
+                  <a href="#" class="float-right ">Forgot password?</a> 
+                <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""/> <div class="custom-control-label"> Remember </div> </label>
+              </div>  */}
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block my-3"> Đăng nhập  </button>
+              </div>    
+          </form>
+          </div> 
         </div>
+    
+         <p class="text-center mt-4">Chưa có tài khoản? <a  className="text-danger"href="/register">Đăng ký</a></p>
+         <br/><br/>
+    
+    
+    
+    </section>
     );
 }
+
 export default Login;

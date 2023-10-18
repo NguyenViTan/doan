@@ -26,6 +26,7 @@ function Home() {
 
         <div className="container mb-4">
            <h3 className="text-center my-3">Tin Tức mới nhất </h3>
+           <div>
              <div className="row border  ">
                  <div className="col-md-6">
                  {
@@ -68,6 +69,7 @@ function Home() {
                  </div>
                 
                 
+             </div>
              </div>
          </div>
 

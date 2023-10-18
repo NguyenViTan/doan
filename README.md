@@ -11,5 +11,6 @@
 ### -Tuần 3 từ 21/9- 28/9: Hoàn chỉnh trang admin
 ### -Tuần 4 tu 28/9 -4/10 :load san pham len trang chính
 ### -Tuần 5 tu 4/10 -11/10 :Tất cả sản phẩm,sản phẩm theo loại,bài viết trên trang chủ,chỉnh sửa database,
+### -Tuần 6 từ 11/10-18/10:Login, Gio hang bài viết
 
 
